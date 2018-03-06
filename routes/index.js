@@ -8,13 +8,13 @@ router.get('/status', (req, res) =>
   })
 );
 
-router.get('/pullrequest', function (req, res, next) {
+router.post('/pullrequest', (req, res, next) => {
 
-  var pull_request_title = req.body.resource.title
-  var developer_name = req.body.resource.createdBy.displayName
-  var pull_request_url = req.body.resource._links.web.href
+  var titile = req.body.resource.title
+  var autor = req.body.resource.createdBy.displayName
+  var link = req.body.resource._links.web.href
   var creation_date = req.body.resource.creationDate
-  var repository_name = req.body.resource.repository.name
+  var repository = req.body.resource.repository.name
 
   request.post({
     headers: {
@@ -26,14 +26,13 @@ router.get('/pullrequest', function (req, res, next) {
         "@type": "MessageCard",
         "@context": "http://schema.org/extensions",
         "themeColor": "0076D7",
-        "summary": "${developer_name} created a new pull request",
+        "summary": "${autor} created a new pull request",
         "sections": [{
-            "activityTitle": "${developer_name} created a new pull request",
-            "activitySubtitle": "${pull_request_title}",
-            "activityImage": "https://pbs.twimg.com/profile_images/876923251741437953/IQsRzovW_400x400.jpg",
+            "activityTitle": "${autor} created a new pull request",
+            "activitySubtitle": "${titile}",
             "facts": [{
                 "name": "Repository",
-                "value": "${repository_name}"
+                "value": "${repository}"
             }, {
                 "name": "Creation date",
                 "value": "${creation_date}"
@@ -44,7 +43,7 @@ router.get('/pullrequest', function (req, res, next) {
           "@type": "OpenUri",
           "name": "Review",
           "targets": [
-            { "os": "default", "uri": "${pull_request_url}" }
+            { "os": "default", "uri": "${link}" }
           ]
         }]
     }`
