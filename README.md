@@ -2,7 +2,7 @@
 
 This app just post an actionable message card to an Office 365 group, it is intended to be used to manage events from TFS service hooks, for example when a pull request is created.
 
-The following code represent the structure to create an actionable message card:
+The following code represent the structure of the body to create an actionable message card:
 
 ```json
 {
@@ -44,3 +44,5 @@ The following code represent the structure to create an actionable message card:
 ```
 
 To create a new service hook in VSTS go to Settings > Service Hooks and trigger the action with the desired event from TFS
+
+More info: https://docs.microsoft.com/en-us/outlook/actionable-messages/actionable-messages-via-connectors
