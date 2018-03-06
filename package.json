@@ -1,6 +1,6 @@
 {
-  "name": "pullrequests-app",
-  "version": "0.0.0",
+  "name": "incoming-webhooks-app",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
