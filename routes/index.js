@@ -1,6 +1,7 @@
-var express = require('express');
-var request = require('request');
-var router = express.Router();
+let express = require('express');
+let request = require('request');
+let router = express.Router();
+let config = require('config');
 
 router.get('/status', (req, res) =>
 	res.json({
@@ -20,7 +21,7 @@ router.post('/pullrequest', (req, res, next) => {
 		headers: {
 			'content-type': 'application/json'
 		},
-		url: process.env.WEBHOOKS_TEAMS_URL,
+		url: config.WEBHOOKS_TEAMS_URL,
 		body: `{
 			"@type": "MessageCard",
 			"@context": "http://schema.org/extensions",
@@ -48,12 +49,13 @@ router.post('/pullrequest', (req, res, next) => {
 		}`
 	}, (error, response, body) => {
 		if (error) {
+			console.log(error)
 			next(error)
+		} else {
+			res.json({
+				status: 'success'
+			});
 		}
-
-		res.json({
-			status: 'success'
-		});
 	});
 });
 
