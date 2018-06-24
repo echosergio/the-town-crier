@@ -1,5 +1,7 @@
 # Warriors incoming webhooks app
 
+[![Build Status](https://travis-ci.com/sergiovhe/warriors-webhooks-app.svg?branch=master)](https://travis-ci.com/sergiovhe/warriors-webhooks-app)
+
 This app just post an actionable message card to an Office 365 group, it is intended to be used to manage events from TFS service hooks, for example when a pull request is created.
 
 The following code represent the structure of the body to create an actionable message card:
