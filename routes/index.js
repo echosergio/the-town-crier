@@ -28,101 +28,101 @@ router.post('/pullrequest', (req, res, next) => {
         },
         url: webhooks_teams_url,
         body: `
-		{
-			"$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
-			"type": "AdaptiveCard",
-			"version": "1.0",
-			"body": [
-				{
-					"type": "Container",
-					"items": [
-						{
-							"type": "TextBlock",
-							"text": "Pull request",
-							"weight": "bolder",
-							"size": "medium"
-						},
-						{
-							"type": "ColumnSet",
-							"columns": [
-								{
-									"type": "Column",
-									"width": "auto",
-									"items": [
-										{
-											"type": "Image",
-											"url": "${autor_image}",
-											"size": "small",
-											"style": "person"
-										}
-									]
-								},
-								{
-									"type": "Column",
-									"width": "stretch",
-									"items": [
-										{
-											"type": "TextBlock",
-											"text": "${autor}",
-											"weight": "bolder",
-											"wrap": true
-										},
-										{
-											"type": "TextBlock",
-											"spacing": "none",
-											"text": "${autor_id}",
-											"isSubtle": true,
-											"wrap": true
-										}
-									]
-								}
-							]
-						}
-					]
-				},
-				{
-					"type": "Container",
-					"items": [
-						{
-							"type": "TextBlock",
-							"text": "${titile}",
-							"wrap": true
-						},
-						{
-							"type": "FactSet",
-							"facts": [
-								{
-									"title": "Repository:",
-									"value": "${repository}"
-								},
-								{
-									"title": "Project:",
-									"value": "${project}"
-								},
-								{
-									"title": "Description:",
-									"value": "${description}"
-								},
-								{
-									"title": "Creation date:",
-									"value": "${creation_date}"
-								}
-							]
-						}
-					]
-				},
-				{
-					"type": "ActionSet",
-					"actions": [
-						{
-							"type": "Action.OpenUrl",
-							"title": "Review",
-							"url": "${link}"
-						}
-					]
-				}
-			]
-		}
+        {
+            "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+            "type": "AdaptiveCard",
+            "version": "1.0",
+            "body": [
+                {
+                    "type": "Container",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "Pull request",
+                            "weight": "bolder",
+                            "size": "medium"
+                        },
+                        {
+                            "type": "ColumnSet",
+                            "columns": [
+                                {
+                                    "type": "Column",
+                                    "width": "auto",
+                                    "items": [
+                                        {
+                                            "type": "Image",
+                                            "url": "${autor_image}",
+                                            "size": "small",
+                                            "style": "person"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Column",
+                                    "width": "stretch",
+                                    "items": [
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "${autor}",
+                                            "weight": "bolder",
+                                            "wrap": true
+                                        },
+                                        {
+                                            "type": "TextBlock",
+                                            "spacing": "none",
+                                            "text": "${autor_id}",
+                                            "isSubtle": true,
+                                            "wrap": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Container",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "${titile}",
+                            "wrap": true
+                        },
+                        {
+                            "type": "FactSet",
+                            "facts": [
+                                {
+                                    "title": "Repository:",
+                                    "value": "${repository}"
+                                },
+                                {
+                                    "title": "Project:",
+                                    "value": "${project}"
+                                },
+                                {
+                                    "title": "Description:",
+                                    "value": "${description}"
+                                },
+                                {
+                                    "title": "Creation date:",
+                                    "value": "${creation_date}"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "ActionSet",
+                    "actions": [
+                        {
+                            "type": "Action.OpenUrl",
+                            "title": "Review",
+                            "url": "${link}"
+                        }
+                    ]
+                }
+            ]
+        }
 		`
     }, (error, response, body) => {
         if (error) {
