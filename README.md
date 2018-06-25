@@ -1,7 +1,7 @@
 # The Town Crier
 
 <p align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/El_pregonero%2C_costumbres_de_Arag%C3%B3n%2C_de_Valeriano_Dom%C3%ADnguez_B%C3%A9cquer.jpg" alt="Scree plot" width="400">
+  <img src="https://raw.githubusercontent.com/sergiovhe/warriors-webhooks-app/master/img/ttc.jpg" alt="The Town Crier" width="380">
   <br><br>
   <img src="https://travis-ci.com/sergiovhe/warriors-webhooks-app.svg?branch=master" alt="Status image">
   <br>
