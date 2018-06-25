@@ -1,7 +1,6 @@
 let express = require('express');
 let request = require('request');
 let router = express.Router();
-let config = require('config');
 
 router.get('/status', (req, res) =>
 	res.json({
@@ -11,17 +10,19 @@ router.get('/status', (req, res) =>
 
 router.post('/pullrequest', (req, res, next) => {
 
-	var titile = req.body.resource.title
-	var autor = req.body.resource.createdBy.displayName
-	var link = req.body.resource._links.web.href
-	var creation_date = req.body.resource.creationDate
-	var repository = req.body.resource.repository.name
+	let webhooks_teams_url = req.headers['webhooks-teams-url']
+
+	let titile = req.body.resource.title
+	let autor = req.body.resource.createdBy.displayName
+	let link = req.body.resource._links.web.href
+	let creation_date = req.body.resource.creationDate
+	let repository = req.body.resource.repository.name
 
 	request.post({
 		headers: {
 			'content-type': 'application/json'
 		},
-		url: config.WEBHOOKS_TEAMS_URL,
+		url: webhooks_teams_url,
 		body: `{
 			"@type": "MessageCard",
 			"@context": "http://schema.org/extensions",
