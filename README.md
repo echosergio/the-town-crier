@@ -2,10 +2,10 @@
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/sergiovhe/warriors-webhooks-app/master/img/ttc.jpg" alt="The Town Crier" width="380">
-  <br><br>
-  <img src="https://travis-ci.com/sergiovhe/warriors-webhooks-app.svg?branch=master" alt="Status image">
   <br>
 </p>
+
+[![Build Status](https://travis-ci.com/sergiovhe/warriors-webhooks-app.svg?branch=master)](https://travis-ci.com/sergiovhe/warriors-webhooks-app)
 
 This app just post an actionable message card to an Office 365 group, it is intended to be used to manage events from TFS service hooks, for example when a pull request is created.
 
