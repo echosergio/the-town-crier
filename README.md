@@ -1,6 +1,11 @@
-# Warriors incoming webhooks app
+# The Town Crier
 
-[![Build Status](https://travis-ci.com/sergiovhe/warriors-webhooks-app.svg?branch=master)](https://travis-ci.com/sergiovhe/warriors-webhooks-app)
+<p align="center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/El_pregonero%2C_costumbres_de_Arag%C3%B3n%2C_de_Valeriano_Dom%C3%ADnguez_B%C3%A9cquer.jpg" alt="Scree plot" width="400">
+  <br><br>
+  <img src="https://travis-ci.com/sergiovhe/warriors-webhooks-app.svg?branch=master" alt="Status image">
+  <br>
+</p>
 
 This app just post an actionable message card to an Office 365 group, it is intended to be used to manage events from TFS service hooks, for example when a pull request is created.
 
