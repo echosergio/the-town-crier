@@ -10,7 +10,7 @@ router.get('/status', (req, res) =>
 
 router.post('/pullrequest', (req, res, next) => {
 
-    let webhooks_teams_url = req.headers['webhooks-teams-url']
+    let incoming_webhook_url = req.headers['incoming-webhook-url']
 
     let titile = req.body.resource.title
     let autor = req.body.resource.createdBy.displayName
@@ -22,7 +22,7 @@ router.post('/pullrequest', (req, res, next) => {
         headers: {
             'content-type': 'application/json'
         },
-        url: webhooks_teams_url,
+        url: incoming_webhook_url,
         body: `{
 			"@type": "MessageCard",
 			"@context": "http://schema.org/extensions",

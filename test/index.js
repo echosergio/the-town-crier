@@ -8,7 +8,7 @@ let nock = require('nock');
 chai.use(chaiHttp);
 
 let pullrequest = require('./tfs-events/git-pullrequest-created.json');
-let webhooks_teams_url = "https://outlook.office365.com/webhook/test/IncomingWebhook/test/test";
+let incoming_webhook_url = "https://outlook.office365.com/webhook/test/IncomingWebhook/test/test";
 
 describe('Status', () => {
     it('it should GET the status', (done) => {
@@ -25,15 +25,15 @@ describe('Status', () => {
 
 describe('Pull Requests', () => {
     beforeEach(() => {
-        nock(webhooks_teams_url)
+        nock(incoming_webhook_url)
             .post('')
             .reply(200);
     });
 
-    it('it should POST the pull request to the channel web hook', (done) => {
+    it('it should POST the pull request to the channel incoming webhook', (done) => {
         chai.request(app)
             .post('/pullrequest')
-            .set('webhooks-teams-url', webhooks_teams_url)
+            .set('incoming-webhook-url', incoming_webhook_url)
             .send(pullrequest)
             .end((err, res) => {
                 res.should.have.status(200);
