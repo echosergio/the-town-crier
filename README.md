@@ -58,14 +58,11 @@ More info: https://docs.microsoft.com/en-us/outlook/actionable-messages/actionab
 
 Configuring a new pull requests notification subscription:
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/sergiovhe/warriors-webhooks-app/master/img/vsts-webhook-creation.gif" alt="vsts-webhook-creation">
-  <br><br>
-</p>
+![VSTS Service Hook creation](https://raw.githubusercontent.com/sergiovhe/warriors-webhooks-app/master/img/vsts-webhook-creation.gif)
 
 Resulting card posted in our channel:
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/sergiovhe/warriors-webhooks-app/master/img/actionable-card.png" alt="actionable-card" width="600">
+  <img src="https://raw.githubusercontent.com/sergiovhe/warriors-webhooks-app/master/img/actionable-card.png" alt="actionable-card" width="800">
   <br><br>
 </p>
