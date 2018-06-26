@@ -56,7 +56,11 @@ More info: https://docs.microsoft.com/en-us/outlook/actionable-messages/actionab
 
 ## Pull requests
 
-Configuring a new pull requests notification subscription:
+#### Configuring a new pull requests notification subscription
+
+1. Trigger on "Pull request created" event
+2. Add the URL to which the HTTP POST will be sent
+3. Add an HTTP header key with the desired Office 365 Incoming Webhook URL
 
 ![VSTS Service Hook creation](https://raw.githubusercontent.com/sergiovhe/warriors-webhooks-app/master/img/vsts-webhook-creation.gif)
 
