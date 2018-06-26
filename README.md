@@ -53,3 +53,19 @@ The following code represent the structure of the body to create an actionable m
 To create a new service hook in VSTS go to Settings > Service Hooks and trigger the action with the desired event from TFS
 
 More info: https://docs.microsoft.com/en-us/outlook/actionable-messages/actionable-messages-via-connectors
+
+## Pull requests
+
+Configuring a new pull requests notification subscription:
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/sergiovhe/warriors-webhooks-app/master/img/vsts-webhook-creation.gif" alt="vsts-webhook-creation">
+  <br><br>
+</p>
+
+Resulting card posted in our channel:
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/sergiovhe/warriors-webhooks-app/master/img/actionable-card.png" alt="actionable-card" width="600">
+  <br><br>
+</p>
