@@ -1,6 +1,6 @@
 # The Town Crier
 
-[![Build Status](https://travis-ci.com/sergiovhe/warriors-webhooks-app.svg?branch=master)](https://travis-ci.com/sergiovhe/warriors-webhooks-app)
+[![Build Status](https://travis-ci.com/sergiovhe/the-town-crier.svg?branch=master)](https://travis-ci.com/sergiovhe/the-town-crier)
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/sergiovhe/warriors-webhooks-app/master/img/ttc.jpg" alt="The Town Crier" width="380">
