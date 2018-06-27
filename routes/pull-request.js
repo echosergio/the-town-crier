@@ -18,30 +18,40 @@ router.post('/', (req, res, next) => {
         },
         url: incoming_webhook_url,
         body: `{
-			"@type": "MessageCard",
-			"@context": "http://schema.org/extensions",
-			"themeColor": "0076D7",
-			"summary": "${autor} created a new pull request",
-			"sections": [{
-				"activityTitle": "${autor} created a new pull request",
-				"activitySubtitle": "${titile}",
-				"facts": [{
-					"name": "Repository",
-					"value": "${repository}"
-				}, {
-					"name": "Creation date",
-					"value": "${creation_date}"
-				}],
-				"markdown": true
-			}],
-			"potentialAction": [{
-			"@type": "OpenUri",
-			"name": "Review",
-			"targets": [
-				{ "os": "default", "uri": "${link}" }
-			]
-			}]
-		}`
+            "@type": "MessageCard",
+            "@context": "http://schema.org/extensions",
+            "themeColor": "0076D7",
+            "summary": "${autor} created a new pull request",
+            "sections": [
+                {
+                    "activityTitle": "${autor} created a new pull request",
+                    "activitySubtitle": "${titile}",
+                    "facts": [
+                        {
+                            "name": "Repository",
+                            "value": "${repository}"
+                        },
+                        {
+                            "name": "Creation date",
+                            "value": "${creation_date}"
+                        }
+                    ],
+                    "markdown": true
+                }
+            ],
+            "potentialAction": [
+                {
+                    "@type": "OpenUri",
+                    "name": "Review",
+                    "targets": [
+                        {
+                            "os": "default",
+                            "uri": "${link}"
+                        }
+                    ]
+                }
+            ]
+        }`
     }, (error, response, body) => {
         if (error) {
             console.log(error)
