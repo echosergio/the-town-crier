@@ -32,7 +32,7 @@ describe('Pull Requests', () => {
 
     it('it should POST the pull request to the channel incoming webhook', (done) => {
         chai.request(app)
-            .post('/pullrequest')
+            .post('/pull-request')
             .set('incoming-webhook-url', incoming_webhook_url)
             .send(pullrequest)
             .end((err, res) => {
