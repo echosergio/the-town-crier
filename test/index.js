@@ -13,11 +13,11 @@ let incoming_webhook_url = "https://outlook.office365.com/webhook/test/IncomingW
 describe('Status', () => {
     it('it should GET the status', (done) => {
         chai.request(app)
-            .get('/status')
+            .get('/')
             .end((err, res) => {
                 res.should.have.status(200);
                 res.should.be.json;
-                res.body.should.have.property('status', 'ok');
+                res.body.should.have.property('status', 'OK');
                 done();
             });
     });
@@ -34,6 +34,7 @@ describe('Pull Requests', () => {
         chai.request(app)
             .post('/pull-request')
             .set('incoming-webhook-url', incoming_webhook_url)
+            .auth('test', 'test')
             .send(pullrequest)
             .end((err, res) => {
                 res.should.have.status(200);
