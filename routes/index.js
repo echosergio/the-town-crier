@@ -2,7 +2,7 @@ let express = require('express');
 let router = express.Router();
 let auth = require('../auth.js')();
 
-var pull_request = require('./pull-request');
+let pull_request = require('./pull-request');
 
 router.get('/', (req, res) =>
   res.json({
