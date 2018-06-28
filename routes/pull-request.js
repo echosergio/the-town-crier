@@ -4,6 +4,10 @@ let router = express.Router();
 
 router.post('/', (req, res, next) => {
 
+    if (req.body.eventType != 'git.pullrequest.created') {
+        return next('Event type not supported')
+    }
+
     let incoming_webhook_url = req.headers['incoming-webhook-url']
 
     let titile = req.body.resource.title
@@ -54,13 +58,12 @@ router.post('/', (req, res, next) => {
         }`
     }, (error, response, body) => {
         if (error) {
-            console.log(error)
-            next(error)
-        } else {
-            res.json({
-                status: 'success'
-            });
+            return next(error)
         }
+
+        res.json({
+            status: 'success'
+        });
     });
 });
 
