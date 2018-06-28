@@ -13,6 +13,6 @@ router.get('/', (req, res) =>
   })
 );
 
-router.use('/pull-request', auth.authenticate(), pull_request);
+router.use('/pull-request', pull_request);
 
 module.exports = router;

@@ -34,7 +34,6 @@ describe('Pull Requests', () => {
         chai.request(app)
             .post('/pull-request')
             .set('incoming-webhook-url', incoming_webhook_url)
-            .auth('test', 'test')
             .send(pullrequest)
             .end((err, res) => {
                 res.should.have.status(200);
